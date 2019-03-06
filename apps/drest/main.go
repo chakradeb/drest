@@ -30,6 +30,9 @@ func runPrompt() {
 		text, _ := reader.ReadString('\n')
 		// convert CRLF to LF
 		text = strings.Replace(text, "\n", "", -1)
+		if text == "exit()" {
+			os.Exit(0)
+		}
 		fmt.Println(text)
 	}
 }
@@ -40,6 +43,10 @@ func runFile(filepath string) {
 		fmt.Print("Error While reading file: \n", err)
 	}
 	fmt.Println(string(data))
+
+}
+
+func run(source string) {
 
 }
 
